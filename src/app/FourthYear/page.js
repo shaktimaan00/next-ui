@@ -1,14 +1,16 @@
 "use client"
 import { Button } from '@nextui-org/react';
-import "../components/styles/mainsection.css"
+import "../styles/mainsection.css"
 import Link from 'next/link';
 import Image from 'next/image';
 import dogeCse from "../images/doge-cse.png"
 import dogeMe from "../images/doge-me.png"
 import dogeCivil from "../images/doge-civil.png"
 import dogeIt from "../images/doge-it.png"
+import { useRouter } from 'next/navigation';
 
 const SelectBranch = () => {
+  const router = useRouter();
 
   return (
     <div className="container">
@@ -41,6 +43,11 @@ const SelectBranch = () => {
             src={dogeIt}
             width={32}
           />
+        </Button>
+      </div>
+      <div>
+        <Button variant='ghost' className='branch-btn' onClick={()=> router.back()}>
+          <p>Go Back !!</p>
         </Button>
       </div>
     </div>

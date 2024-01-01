@@ -59,10 +59,11 @@
     align-items: center;
     width: 13vw;
     height: 8vh;
+
 }
 
 .branch-btn p{
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 
