@@ -1,5 +1,5 @@
 "use client"
-import { Button } from '@nextui-org/react';
+import { button } from '@nextui-org/react';
 import "../styles/mainsection.css"
 import Link from 'next/link';
 import Image from 'next/image';
@@ -16,39 +16,39 @@ const SelectBranch = () => {
     <div className="container">
       <h1 className='branch-title '>Select your Branch</h1>
       <div className='branch-main-container'>
-        <Button className="branch-btn" variant="ghost" auto >
+        <button className="branch-btn" variant="ghost" auto >
           <p>CSE</p>
           <Image 
             src={dogeCse}
             width={28}
           />
-        </Button>
-        <Button className="branch-btn" variant="ghost" auto >
+        </button>
+        <button className="branch-btn" variant="ghost" auto >
         <p>ME</p>
           <Image 
             src={dogeMe}
             width={29}
           />
-        </Button>
-        <Button className="branch-btn" variant="ghost" auto >
+        </button>
+        <button className="branch-btn" variant="ghost" auto >
         <p>Civil</p>
           <Image 
             src={dogeCivil}
             width={38}
           />
-        </Button>
-        <Button className="branch-btn" variant="ghost" auto >
+        </button>
+        <button className="branch-btn" variant="ghost" auto >
         <p>IT</p>
           <Image 
             src={dogeIt}
             width={32}
           />
-        </Button>
+        </button>
       </div>
       <div>
-        <Button variant='ghost' className='branch-btn' onClick={()=> router.back()}>
+        <button variant='ghost' className='branch-btn' onClick={()=> router.back()}>
           <p>Go Back !!</p>
-        </Button>
+        </button>
       </div>
     </div>
   );
