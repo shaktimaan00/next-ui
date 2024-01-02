@@ -1,27 +1,24 @@
-*{
-    transition: none !important;
-}
-
-.container{
+.container {
     display: grid;
     place-items: center;
     /* row-gap: 2rem; */
 }
 
-.semester-main-container{
+.semester-main-container {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 4rem;
 }
 
-.semester-left-column > Button, .semester-right-column > Button{
+.semester-left-column>Button,
+.semester-right-column>Button {
     width: 14rem;
     font-size: 1rem;
     padding: 1.5rem;
 }
 
-.semester-left-column{
+.semester-left-column {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,7 +26,7 @@
     gap: 1rem;
 }
 
-.semester-right-column{
+.semester-right-column {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,7 +34,7 @@
     gap: 1rem;
 }
 
-.semester-title{
+.semester-title {
     font-size: 7vw;
     font-weight: bold;
     padding: 3rem 0;
@@ -45,19 +42,19 @@
 
 /* Select Branch css */
 
-.branch-title{
+.branch-title {
     font-size: 7vw;
     font-weight: bold;
     padding: 3rem 0;
 }
 
-.branch-main-container{
+.branch-main-container {
     display: flex;
     gap: 1.2rem;
     padding: 2.5rem;
 }
 
-.branch-btn{
+.branch-btn {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -66,9 +63,8 @@
 
 }
 
-.branch-btn p{
+.branch-btn p {
     font-size: 1rem;
 }
-
 
 

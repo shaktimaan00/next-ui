@@ -18,30 +18,30 @@ const SelectBranch = () => {
 
   return (
     <div className="container">
-      <h1 className='branch-title '>Select your Branch</h1>
+      <h1 className='branch-title'>Select your Branch</h1>
       <div className='branch-main-container'>
-        <Button className="branch-btn" variant="ghost" auto >
+        <Button className="branch-btn" variant="ghost" auto onClick={()=> router.push("FirstYear/cse")}>
           <p>CSE</p>
           <Image 
             src={dogeCse}
             width={28}
           />
         </Button>
-        <Button className="branch-btn" variant="ghost" auto >
+        <Button className="branch-btn" variant="ghost" auto onClick={()=> router.push("FirstYear/me")}>
         <p>ME</p>
           <Image 
             src={dogeMe}
             width={29}
           />
         </Button>
-        <Button className="branch-btn" variant="ghost" auto >
+        <Button className="branch-btn" variant="ghost" auto onClick={()=> router.push("FirstYear/civil")}>
         <p>Civil</p>
           <Image 
             src={dogeCivil}
             width={38}
           />
         </Button>
-        <Button className="branch-btn" variant="ghost" auto >
+        <Button className="branch-btn" variant="ghost" auto onClick={()=> router.push("FirstYear/civil")}>
         <p>IT</p>
           <Image 
             src={dogeIt}
