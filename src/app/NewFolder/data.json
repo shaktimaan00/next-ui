@@ -1,0 +1,27 @@
+[
+    {
+      "year": 1,
+      "branch": "CSE",
+      "subjects": [
+        { "content_id": 1, "id": "five-card-1", "class": "border-none, cse-card", "subject_id": "CS-101", "subject_name": "Introduction to Computer Science" },
+        { "content_id": 2, "id": "five-card-2", "class": "border-none, cse-card", "subject_id": "CS-702", "subject_name": "Energy and Environmental Engineering" },
+        { "content_id": 3, "id": "five-card-3", "class": "border-none, cse-card", "subject_id": "CS-703", "subject_name": "Energy and Environmental Engineering" },
+        { "content_id": 4, "id": "five-card-4", "class": "border-none, cse-card", "subject_id": "CS-704", "subject_name": "Energy and Environmental Engineering" },
+        { "content_id": 5, "id": "five-card-5", "class": "border-none, cse-card", "subject_id": "CS-705", "subject_name": "Energy and Environmental Engineering" },
+        { "content_id": 6, "id": "five-card-6", "class": "border-none, cse-card", "subject_id": "CS-706", "subject_name": "Energy and Environmental Engineering" }
+      ]
+    },
+    {
+      "year": 1,
+      "branch": "ECE",
+      "subjects": [
+        { "content_id": 1, "id": "five-card-1", "class": "border-none, cse-card", "subject_id": "ECE-101", "subject_name": "Introduction to Computer Science" },
+        { "content_id": 2, "id": "five-card-2", "class": "border-none, cse-card", "subject_id": "ECE-702", "subject_name": "Energy and Environmental Engineering" },
+        { "content_id": 3, "id": "five-card-3", "class": "border-none, cse-card", "subject_id": "ECE-703", "subject_name": "Energy and Environmental Engineering" },
+        { "content_id": 4, "id": "five-card-4", "class": "border-none, cse-card", "subject_id": "ECE-704", "subject_name": "Energy and Environmental Engineering" },
+        { "content_id": 5, "id": "five-card-5", "class": "border-none, cse-card", "subject_id": "ECE-705", "subject_name": "Energy and Environmental Engineering" },
+        { "content_id": 6, "id": "five-card-6", "class": "border-none, cse-card", "subject_id": "ECE-706", "subject_name": "Energy and Environmental Engineering" }
+      ]
+    }
+  ]
+  
