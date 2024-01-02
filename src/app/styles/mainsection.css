@@ -1,14 +1,18 @@
-.container {
-    display: grid;
-    place-items: center;
+.container, .branch-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* place-items: center; */
     /* row-gap: 2rem; */
 }
 
 .semester-main-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 4rem;
+    gap: 1rem;
 }
 
 .semester-left-column>Button,
@@ -20,18 +24,16 @@
 
 .semester-left-column {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 4rem;
 }
 
 .semester-right-column {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 4rem;
 }
 
 .semester-title {
@@ -40,47 +42,129 @@
     padding: 3rem 0;
 }
 
+@media only screen and (max-width: 550px){
+    .semester-left-column, .semester-right-column{
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .semester-main-container{
+        gap: 0.5rem;
+    }
+
+    .semester-title{
+        /* padding: 1.5rem 0 */
+        padding-top: 1rem;
+        padding-bottom: 1.5rem;
+    }
+}
+
 /* Select Branch css */
+.branch-container{
+    padding: 0 120px 2rem 120px;
+}
 
 .branch-title {
     font-size: 7vw;
     font-weight: bold;
-    padding: 3rem 0;
+    padding: 1.5rem 0 1.5rem 0;
+}
+
+.branch-left-column{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.branch-right-column{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
 }
 
 .branch-main-container {
     display: flex;
-    gap: 1.2rem;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
     padding: 2.5rem;
 }
 
 .branch-btn {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    width: 13vw;
-    height: 8vh;
-
+    gap: 1rem;
+    width: 14rem;
+    height: 2.8rem;
 }
 
 .branch-btn p {
     font-size: 1rem;
+    margin-top: 0.3rem;
 }
 
+.go-back p{
+    margin: 0;
+}
+
+@media only screen and (max-width:768px){
+    .branch-container{
+        padding: 0 50px 1rem 50px;
+    }
+
+    .branch-title{
+        padding: 1rem 0 1rem 0;
+    }
+
+    .branch-main-container{
+        padding-top: 10px;
+    }
+}
+
+@media only screen and (max-width:550px) {
+    .branch-main-container{
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    .branch-left-column, .branch-right-column{
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .branch-title{
+        padding: 1rem 0 0 0;
+        text-align: center;
+        /* font-size: 1.5rem; */
+    }
+
+    .branch-btn{
+        justify-content: center;
+        width: 14rem;
+        font-size: 1rem;
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+}
 
 /* card css */
 #main-card{
     display: grid;
     place-items: center;
     grid-template-columns: 1fr 1fr 1fr; 
-    grid-template-rows: 0.2fr 1fr 1fr .2fr 1fr 1fr;
+    /* grid-template-rows: 0.2fr 1fr 1fr .2fr 1fr 1fr;
     grid-template-areas:
         "tit-1 tit-1 tit-1"
         "5c1 5c2 5c3"
         "5c4 5c5 5c6"
         "tit-2 tit-2 tit-2"
         "6c1 6c2 6c3"
-        "6c4 6c5 6c6";
+        "6c4 6c5 6c6"; */
     text-align: center;
     /* background-color: none; */
     padding: 0 120px;
@@ -89,7 +173,9 @@
 
 
 #title1 {
-    grid-area: tit-1;
+    /* grid-area: tit-1; */
+    grid-row: 1;
+    grid-column: span 3;
     border-radius: 5px;
     /* background-color: red; */
     padding: 1.5rem;
@@ -97,7 +183,9 @@
 }
 
 #title2 {
-    grid-area: tit-2;
+    /* grid-area: tit-2; */
+    grid-row: 4;
+    grid-column: span 3;
     border-radius: 5px;
     /* background-color: red; */
     padding: 1.5rem;
@@ -105,79 +193,80 @@
 }
 
 #five-card-1 {
-    grid-area: 5c1;
+    /* grid-area: 5c1; */
     border-radius: 5px;
     background-color:#ddd;
 }
 
 #five-card-2 {
-    grid-area: 5c2;
+    /* grid-area: 5c2; */
     border-radius: 5px;
     background-color: #ddd;
 }
 
 #five-card-3 {
     background-color: #ddd;
-    grid-area: 5c3;
+    /* grid-area: 5c3; */
     border-radius: 5px;
 }
 
 #five-card-4 {
     background-color: #ddd;
-    grid-area: 5c4;
+    /* grid-area: 5c4; */
     border-radius: 5px;
 }
 
 #five-card-5 {
     background-color: #ddd;
-    grid-area: 5c5;
+    /* grid-area: 5c5; */
     border-radius: 5px;
 }
 
 #five-card-6 {
     background-color: #ddd;
-    grid-area: 5c6;
+    /* grid-area: 5c6; */
     border-radius: 5px;
 }
 
 #six-card-1 {
     background-color: #ddd;
-    grid-area: 6c1;
+    /* grid-area: 6c1; */
     border-radius: 5px;
 }
 
 #six-card-2 {
     background-color: #ddd;
-    grid-area: 6c2;
+    /* grid-area: 6c2; */
     border-radius: 5px;
 }
 
 #six-card-3 {
     background-color: #ddd;
-    grid-area: 6c3;
+    /* grid-area: 6c3; */
     border-radius: 5px;
 }
 
 #six-card-4 {
     background-color: #ddd;
-    grid-area: 6c4;
+    /* grid-area: 6c4; */
     border-radius: 5px;
 }
 
 #six-card-5 {
     background-color: #ddd;
-    grid-area: 6c5;
+    /* grid-area: 6c5; */
     border-radius: 5px;
 }
 
 #six-card-6 {
     background-color: #ddd;
-    grid-area: 6c6;
+    /* grid-area: 6c6; */
     border-radius: 5px;
 }
 
 .cse-card{
     padding:2rem 1rem;
+    height: 270px;
 }
 
 .subject-id{
@@ -188,4 +277,89 @@
 .subject-name{
     font-size: 1.8vw;
     padding-bottom: 1.5rem;
+}
+
+.card-content{
+    height: 80%;
+    overflow: hidden;
+}
+
+
+
+
+@media screen and (max-width:768px) {
+    #main-card{
+        grid-template-columns: 1fr 1fr;
+        gap: 0.7rem;
+        padding: 0 2rem;
+    }
+
+    #title1{
+        grid-row: 1;
+        grid-column: span 2;
+    }
+
+    #title2{
+        grid-row: 5;
+        grid-column: span 2;
+    }
+
+    .cse-card{
+        padding: 1.5rem 0.8rem;
+        height: 210px;
+    }
+
+    .subject-id{
+        font-size: 2rem;
+        padding: 0;
+    }
+
+    .subject-name{
+        padding-top: 0.2rem;
+        font-size: 1rem;
+    }
+
+}
+
+@media screen and (max-width:550px) {
+    #main-card{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: none;
+        gap: 0.7rem;
+        padding: 0 28px;
+    }
+
+    .cse-card{
+        min-width: 120px;
+        height: 150px;
+        padding: 0.5rem 0.3rem;
+    }
+
+    #title1{
+        font-size: 2rem;
+        padding: 0.5rem 0.8rem;
+        grid-row: 1;
+        grid-column: span 2;
+    }
+
+    #title2{
+        font-size: 2rem;
+        padding: 0.5rem 0.8rem;
+        grid-row: 5;
+        grid-column: span 2;
+    }
+
+    .subject-id{
+        font-size: 1.2rem;
+        padding: 0;
+    }
+
+    .subject-name{
+        padding: 0;
+        font-size: 0.8rem;
+    }
+
+    .card-notes-btn{
+        font-size: 0.6rem;
+    }
 }

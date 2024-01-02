@@ -59,20 +59,20 @@ function YourComponent() {
                                     width={38}
                                 />
                             </Button>
-                            <Button variant='ghost' auto value={1} onPress={handleYearChange}>
-                                <p>Third Year</p>
-                                <Image
-                                    src={dogeThird}
-                                    width={38}
-                                />
-                            </Button>
-                        </div>
-                        <div className='semester-right-column'>
                             <Button variant="ghost" auto value={1} onPress={handleYearChange}>
                                 <p>Second Year</p>
                                 <Image
                                     src={dogeSecond}
                                     width={30}
+                                />
+                            </Button>
+                        </div>
+                        <div className='semester-right-column'>
+                            <Button variant='ghost' auto value={1} onPress={handleYearChange}>
+                                <p>Third Year</p>
+                                <Image
+                                    src={dogeThird}
+                                    width={38}
                                 />
                             </Button>
                             <Button variant='ghost' auto value={1} onPress={handleYearChange}>
@@ -88,42 +88,46 @@ function YourComponent() {
             )}
 
             {selectedYear !== null && selectedBranch === null && (
-                <div className="container">
+                <div className="branch-container">
                     <h1 className='branch-title'>Select your Branch</h1>
                     <div className='branch-main-container'>
-                        <Button className="branch-btn" variant="ghost" auto value={"CSE"} onPress={handleBranchChange}>
-                            <p>CSE</p>
-                            <Image
-                                src={dogeCse}
-                                width={28}
-                            />
-                        </Button>
-                        <Button className="branch-btn" variant="ghost" auto value={"ME"} onPress={handleBranchChange}>
-                            <p>ME</p>
-                            <Image
-                                src={dogeMe}
-                                width={29}
-                            />
-                        </Button>
-                        <Button className="branch-btn" variant="ghost" auto value={"CIVIL"} onPress={handleBranchChange}>
-                            <p>Civil</p>
-                            <Image
-                                src={dogeCivil}
-                                width={38}
-                            />
-                        </Button>
-                        <Button className="branch-btn" variant="ghost" auto value={"ECE"} onPress={handleBranchChange}>
-                            <p>IT</p>
-                            <Image
-                                src={dogeIt}
-                                width={32}
-                            />
-                        </Button>
+                        <div className='branch-left-column'>
+                            <Button className="branch-btn" variant="ghost" auto value={"CSE"} onPress={handleBranchChange}>
+                                <p>CSE</p>
+                                <Image
+                                    src={dogeCse}
+                                    width={28}
+                                />
+                            </Button>
+                            <Button className="branch-btn" variant="ghost" auto value={"ME"} onPress={handleBranchChange}>
+                                <p>ME</p>
+                                <Image
+                                    src={dogeMe}
+                                    width={29}
+                                />
+                            </Button>
+                        </div>
+                        <div className='branch-right-column'>
+                            <Button className="branch-btn" variant="ghost" auto value={"CIVIL"} onPress={handleBranchChange}>
+                                <p>Civil</p>
+                                <Image
+                                    src={dogeCivil}
+                                    width={38}
+                                />
+                            </Button>
+                            <Button className="branch-btn" variant="ghost" auto value={"ECE"} onPress={handleBranchChange}>
+                                <p>IT</p>
+                                <Image
+                                    src={dogeIt}
+                                    width={32}
+                                />
+                            </Button>
+                        </div>
                     </div>
                     <div>
-                    <Button variant='ghost' className='branch-btn' onPress={handleBackToYear}>
-                        <p>Go Back !!</p>
-                    </Button>
+                        <Button variant='light' className='branch-btn go-back' onPress={handleBackToYear}>
+                            <p>Go Back !!</p>
+                        </Button>
                     </div>
                 </div>
             )}
@@ -136,9 +140,11 @@ function YourComponent() {
                             {filteredData.subjects.map((item) => (
                                 <div key={item.content_id} id={item.id}>
                                     <Card radius="lg" className={item.class}>
-                                        <p className="subject-id">{item.subject_id}</p>
-                                        <p className="subject-name">{item.subject_name}</p>
-                                        <Button className="text-white bg-black/20" variant="ghost" color="default" radius="md" size="md">
+                                        <div className='card-content'>
+                                            <p className="subject-id">{item.subject_id}</p>
+                                            <p className="subject-name">{item.subject_name}</p>
+                                        </div>
+                                        <Button className=" card-notes-btn text-white bg-black/20" variant="ghost" color="default" radius="md" size="md">
                                             Click for Notes..
                                         </Button>
                                     </Card>
@@ -148,15 +154,15 @@ function YourComponent() {
                     )}
 
                     <h1 id="title2">6th Sem</h1>
-                    {/* <div id="six-card-1" className="cse-card">Content 1</div>
+                    <div id="six-card-1" className="cse-card">Content 1</div>
                     <div id="six-card-2" className="cse-card">Content 2</div>
-                    <div id="six-card-3" className="cse-card">Content 3</div> */}
+                    <div id="six-card-3" className="cse-card">Content 3</div>
                     <div id="six-card-4" className="cse-card">Content 4</div>
                     <div id="six-card-5" className="cse-card">Content 5</div>
                     <div id="six-card-6" className="cse-card">Content 6</div>
                     <br />
                     <br />
-                    <button onClick={handleBackToBranch}> Go back to branch</button>
+                    {/* <button onClick={handleBackToBranch}> Go back to branch</button> */}
                 </div>
             )}
         </div>
