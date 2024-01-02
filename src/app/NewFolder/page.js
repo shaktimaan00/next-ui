@@ -130,9 +130,9 @@ function YourComponent() {
 
             {selectedYear !== null && selectedBranch !== null && (
                 <div id="main-card">
-                    <h1 id="title1-grid">5th Sem</h1>
+                    <h1 id="title1">5th Sem</h1>
                     {filteredData && (
-                        <div>
+                        <>
                             {filteredData.subjects.map((item) => (
                                 <div key={item.content_id} id={item.id}>
                                     <Card radius="lg" className={item.class}>
@@ -144,13 +144,13 @@ function YourComponent() {
                                     </Card>
                                 </div>
                             ))}
-                        </div>
+                        </>
                     )}
 
-                    <h1 id="title2-grid">6th Sem</h1>
-                    <div id="six-card-1" className="cse-card">Content 1</div>
+                    <h1 id="title2">6th Sem</h1>
+                    {/* <div id="six-card-1" className="cse-card">Content 1</div>
                     <div id="six-card-2" className="cse-card">Content 2</div>
-                    <div id="six-card-3" className="cse-card">Content 3</div>
+                    <div id="six-card-3" className="cse-card">Content 3</div> */}
                     <div id="six-card-4" className="cse-card">Content 4</div>
                     <div id="six-card-5" className="cse-card">Content 5</div>
                     <div id="six-card-6" className="cse-card">Content 6</div>
