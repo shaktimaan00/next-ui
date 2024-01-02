@@ -13,16 +13,16 @@ export default function Home() {
   const router = useRouter();
 
   const handleClick1 = () =>{
-    router.push("FirstYear");
+    router.push("NewFolder");
   }
   const handleClick2 = () =>{
-    router.push("SecondYear");
+    router.push("NewFolder");
   }
   const handleClick3 = () =>{
-    router.push("ThirdYear");
+    router.push("NewFolder");
   }
   const handleClick4 = () =>{
-    router.push("FourthYear");
+    router.push("NewFolder");
   }
 
   return (
