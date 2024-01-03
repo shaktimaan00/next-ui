@@ -48,6 +48,7 @@ function YourComponent() {
                     <h1 className='semester-title'>Select your Semester</h1>
                     <div className='semester-main-container'>
                         <div className='semester-left-column'>
+                            {/* <DownloadButton/> */}
                             <Button variant="ghost" auto value={1} onPress={handleYearChange}>
                                 <p>First Year</p>
                                 <Image
@@ -180,7 +181,7 @@ function YourComponent() {
                             </>
                         )}
                     </div>
-                    
+
                 </div>
             )}
         </div>
