@@ -20,24 +20,20 @@ function YourComponent() {
 
     const handleYearChange = (event) => {
         setSelectedYear(Number(event.target.value));
-        console.log(selectedYear);
     };
 
     const handleBranchChange = (event) => {
         if (event && event.target) {
             setSelectedBranch(event.target.value);
-            console.log(selectedBranch);
         }
     };
 
     const handleBackToBranch = () => {
         setSelectedBranch(null);
-        console.log(selectedBranch);
     }
 
     const handleBackToYear = () => {
         setSelectedYear(null);
-        console.log(selectedYear);
     }
 
 
@@ -57,29 +53,33 @@ function YourComponent() {
                                 <Image
                                     src={dogeFirst}
                                     width={38}
+                                    alt='doge-1'
                                 />
                             </Button>
-                            <Button variant="ghost" auto value={1} onPress={handleYearChange}>
+                            <Button variant="ghost" auto value={2} onPress={handleYearChange}>
                                 <p>Second Year</p>
                                 <Image
                                     src={dogeSecond}
                                     width={30}
+                                    alt='doge-2'
                                 />
                             </Button>
                         </div>
                         <div className='semester-right-column'>
-                            <Button variant='ghost' auto value={1} onPress={handleYearChange}>
+                            <Button variant='ghost' auto value={3} onPress={handleYearChange}>
                                 <p>Third Year</p>
                                 <Image
                                     src={dogeThird}
                                     width={38}
+                                    alt='doge-3'
                                 />
                             </Button>
-                            <Button variant='ghost' auto value={1} onPress={handleYearChange}>
+                            <Button variant='ghost' auto value={4} onPress={handleYearChange}>
                                 <p>Fourth Year</p>
                                 <Image
                                     src={dogeFourth}
                                     width={38}
+                                    alt='doge-4'
                                 />
                             </Button>
                         </div>
@@ -97,6 +97,7 @@ function YourComponent() {
                                 <Image
                                     src={dogeCse}
                                     width={28}
+                                    alt='doge-1'
                                 />
                             </Button>
                             <Button className="branch-btn" variant="ghost" auto value={"ME"} onPress={handleBranchChange}>
@@ -104,6 +105,7 @@ function YourComponent() {
                                 <Image
                                     src={dogeMe}
                                     width={29}
+                                    alt='doge-2'
                                 />
                             </Button>
                         </div>
@@ -113,6 +115,7 @@ function YourComponent() {
                                 <Image
                                     src={dogeCivil}
                                     width={38}
+                                    alt='doge-3'
                                 />
                             </Button>
                             <Button className="branch-btn" variant="ghost" auto value={"ECE"} onPress={handleBranchChange}>
@@ -120,13 +123,14 @@ function YourComponent() {
                                 <Image
                                     src={dogeIt}
                                     width={32}
+                                    alt='doge-4'
                                 />
                             </Button>
                         </div>
                     </div>
                     <div>
-                        <Button variant='light' className='branch-btn go-back' onPress={handleBackToYear}>
-                            <p>Go Back !!</p>
+                        <Button variant='flat' className='cse-card-btn' color='danger' onPress={handleBackToYear}>
+                            <p>&lt; Back</p>
                         </Button>
                     </div>
                 </div>
@@ -134,35 +138,49 @@ function YourComponent() {
 
             {selectedYear !== null && selectedBranch !== null && (
                 <div id="main-card">
-                    <h1 id="title1">5th Sem</h1>
-                    {filteredData && (
-                        <>
-                            {filteredData.subjects.map((item) => (
-                                <div key={item.content_id} id={item.id}>
-                                    <Card radius="lg" className={item.class}>
-                                        <div className='card-content'>
-                                            <p className="subject-id">{item.subject_id}</p>
-                                            <p className="subject-name">{item.subject_name}</p>
-                                        </div>
-                                        <Button className=" card-notes-btn text-white bg-black/20" variant="ghost" color="default" radius="md" size="md">
-                                            Click for Notes..
-                                        </Button>
-                                    </Card>
-                                </div>
-                            ))}
-                        </>
-                    )}
+                    <Button className='card-back-btn' variant='flat' color='danger' onClick={handleBackToBranch}><p>&lt; Back</p></Button>
+                    <div id='semi-main-card-2'>
+                        <h1 id="title1">{filteredData.sem[0].first}</h1>
+                        {filteredData && (
+                            <>
+                                {filteredData.subjects1.map((item) => (
+                                    <div key={item.content_id} id={item.id}>
+                                        <Card radius="lg" className={item.class}>
+                                            <div className='card-content'>
+                                                <p className="subject-id">{item.subject_id}</p>
+                                                <p className="subject-name">{item.subject_name}</p>
+                                            </div>
+                                            <Button className=" card-notes-btn text-white bg-black/20" variant="ghost" color="default" radius="md" size="md">
+                                                Click for Notes..
+                                            </Button>
+                                        </Card>
+                                    </div>
+                                ))}
+                            </>
+                        )}
+                    </div>
 
-                    <h1 id="title2">6th Sem</h1>
-                    <div id="six-card-1" className="cse-card">Content 1</div>
-                    <div id="six-card-2" className="cse-card">Content 2</div>
-                    <div id="six-card-3" className="cse-card">Content 3</div>
-                    <div id="six-card-4" className="cse-card">Content 4</div>
-                    <div id="six-card-5" className="cse-card">Content 5</div>
-                    <div id="six-card-6" className="cse-card">Content 6</div>
-                    <br />
-                    <br />
-                    {/* <button onClick={handleBackToBranch}> Go back to branch</button> */}
+                    <div id='semi-main-card-2'>
+                        <h1 id="title2">{filteredData.sem[0].second}</h1>
+                        {filteredData && (
+                            <>
+                                {filteredData.subjects2.map((item) => (
+                                    <div key={item.content_id} id={item.id}>
+                                        <Card radius="lg" className={item.class}>
+                                            <div className='card-content'>
+                                                <p className="subject-id">{item.subject_id}</p>
+                                                <p className="subject-name">{item.subject_name}</p>
+                                            </div>
+                                            <Button className=" card-notes-btn text-white bg-black/20" variant="ghost" color="default" radius="md" size="md">
+                                                Click for Notes..
+                                            </Button>
+                                        </Card>
+                                    </div>
+                                ))}
+                            </>
+                        )}
+                    </div>
+                    
                 </div>
             )}
         </div>
