@@ -13,10 +13,23 @@ import dogeCse from "../images/doge-cse.png"
 import dogeMe from "../images/doge-me.png"
 import dogeCivil from "../images/doge-civil.png"
 import dogeIt from "../images/doge-it.png"
+import { useRouter } from 'next/navigation';
 
 function YourComponent() {
     const [selectedYear, setSelectedYear] = useState(null);
     const [selectedBranch, setSelectedBranch] = useState(null);
+    const [isxLoading, setIsLoading] = useState(false);
+    const router = useRouter();
+
+    const handleClick = () => {
+        setIsLoading(true);
+        setTimeout(()=>{
+            router.push("../PageDetails");
+            setIsLoading(false);
+        }, 1000)
+        // console.log(filteredData.subjects1)
+    };
+
 
     const handleYearChange = (event) => {
         setSelectedYear(Number(event.target.value));
@@ -36,19 +49,19 @@ function YourComponent() {
         setSelectedYear(null);
     }
 
-
     const filteredData = subjectsData.find(
         (data) => data.year === selectedYear && data.branch === selectedBranch
     );
 
+    // console.log(filteredData.isLoading)
+
     return (
-        <div>
+        <div className='main-container'>
             {selectedYear === null && (
                 <main className="container">
                     <h1 className='semester-title'>Select your Semester</h1>
                     <div className='semester-main-container'>
                         <div className='semester-left-column'>
-                            {/* <DownloadButton/> */}
                             <Button variant="ghost" auto value={1} onPress={handleYearChange}>
                                 <p>First Year</p>
                                 <Image
@@ -151,7 +164,7 @@ function YourComponent() {
                                                 <p className="subject-id">{item.subject_id}</p>
                                                 <p className="subject-name">{item.subject_name}</p>
                                             </div>
-                                            <Button className=" card-notes-btn text-white bg-black/20" variant="ghost" color="default" radius="md" size="md">
+                                            <Button className=" card-notes-btn text-white bg-black/20" variant="ghost" color="default" radius="md" size="md" isLoading={isxLoading} onClick={handleClick}>
                                                 Click for Notes..
                                             </Button>
                                         </Card>
@@ -172,7 +185,7 @@ function YourComponent() {
                                                 <p className="subject-id">{item.subject_id}</p>
                                                 <p className="subject-name">{item.subject_name}</p>
                                             </div>
-                                            <Button className=" card-notes-btn text-white bg-black/20" variant="ghost" color="default" radius="md" size="md">
+                                            <Button className=" card-notes-btn text-white bg-black/20" variant="ghost" color="default" radius="md" size="md" isLoading={isxLoading} onClick={handleClick}>
                                                 Click for Notes..
                                             </Button>
                                         </Card>

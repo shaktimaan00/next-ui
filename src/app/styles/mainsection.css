@@ -1,8 +1,9 @@
-.container, .branch-container {
+.container, .branch-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* height: 100vh; */
     /* place-items: center; */
     /* row-gap: 2rem; */
 }
@@ -305,3 +306,14 @@
         font-size: 0.6rem;
     }
 }
+
+/* Loading Overlay */
+
+.overlay1{
+    position: relative;
+    /* height:89.1vh; */
+    width: 100vw;
+    background-color: red;
+}
+
+
