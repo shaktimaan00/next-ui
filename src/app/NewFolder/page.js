@@ -14,6 +14,7 @@ import dogeMe from "../images/doge-me.png"
 import dogeCivil from "../images/doge-civil.png"
 import dogeIt from "../images/doge-it.png"
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 function YourComponent() {
     const [selectedYear, setSelectedYear] = useState(null);
@@ -22,12 +23,7 @@ function YourComponent() {
     const router = useRouter();
 
     const handleClick = () => {
-        setIsLoading(true);
-        setTimeout(()=>{
-            router.push("../PageDetails");
-            setIsLoading(false);
-        }, 1000)
-        // console.log(filteredData.subjects1)
+        console.log("button Clicked")
     };
 
 
@@ -164,8 +160,20 @@ function YourComponent() {
                                                 <p className="subject-id">{item.subject_id}</p>
                                                 <p className="subject-name">{item.subject_name}</p>
                                             </div>
-                                            <Button className=" card-notes-btn text-white bg-black/20" variant="ghost" color="default" radius="md" size="md" isLoading={isxLoading} onClick={handleClick}>
-                                                Click for Notes..
+                                            <Button className=" card-notes-btn text-white bg-black/20" variant="ghost" color="default" radius="md" size="md" isLoading={isxLoading} onClick={handleClick}> 
+                                                <Link
+                                                    href={{
+                                                        pathname: '../PageDetails',
+                                                        query:{
+                                                            name: "anurag",
+                                                            surname: "mishra"
+                                                        }
+                                                    }}
+                                                    target='_blank'
+
+                                                >
+                                                    Click for Notes..
+                                                </Link>
                                             </Button>
                                         </Card>
                                     </div>
@@ -186,7 +194,19 @@ function YourComponent() {
                                                 <p className="subject-name">{item.subject_name}</p>
                                             </div>
                                             <Button className=" card-notes-btn text-white bg-black/20" variant="ghost" color="default" radius="md" size="md" isLoading={isxLoading} onClick={handleClick}>
+                                            <Link
+                                                href={{
+                                                    pathname: '../PageDetails',
+                                                    query:{
+                                                        name: "anurag",
+                                                        surname: "mishra"
+                                                    }
+                                                }}
+                                                target='_blank'
+
+                                            >
                                                 Click for Notes..
+                                            </Link>
                                             </Button>
                                         </Card>
                                     </div>
